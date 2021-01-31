@@ -2598,7 +2598,7 @@ pub fn try_slatepack_sync_workflow(
 				Err(e) => {
 					debug!("Unable to send via HTTP: {}", e);
 					warn!("Unable to send transaction via HTTP. Will output Slatepack.");
-					return Ok(None);
+					return Err(e);
 				}
 			}
 		}
